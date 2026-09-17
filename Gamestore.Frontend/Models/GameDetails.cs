@@ -1,0 +1,20 @@
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+using Gamestore.Frontend.Converters;
+
+public class GameDetails
+{
+    public int Id {get; set;}
+    [Required(ErrorMessage = "Game name is required.")]
+    [StringLength(100, ErrorMessage = "Game name cannot exceed 100 characters.")]
+    public required string Name { get; set; }
+
+    [Required (ErrorMessage = "Genre is required.")]
+    [JsonConverter(typeof(StringConverter))]
+    public string? GenreId { get; set; }
+
+    [Range(1,100, ErrorMessage = "Price must be between 1 and 100.")]
+    public decimal Price { get; set; }
+
+    public DateOnly ReleaseDate { get; set; }
+}
