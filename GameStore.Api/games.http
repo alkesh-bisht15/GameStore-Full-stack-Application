@@ -1,0 +1,37 @@
+GET http://localhost:5164
+
+###GET /games
+
+GET http://localhost:5164/games
+
+###/games/1
+
+GET http://localhost:5164/games/2
+
+###
+
+POST http://localhost:5164/games
+Content-Type: application/json
+
+{
+    "name" : "Street Fighter 2",
+    "genreId":1,
+    "price": 19.99,
+    "releaseDate": "1992-06-15"
+}
+
+###
+
+PUT http://localhost:5164/games/4
+Content-Type: application/json
+
+{
+    "name": "Street Fighter 2 Turbo",
+    "genreId": 1 ,
+    "price": 44.99,
+    "releaseDate": "1998-10-22"
+}
+
+###
+
+DELETE http://localhost:5164/games/2
